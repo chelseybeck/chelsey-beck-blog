@@ -1,7 +1,7 @@
 ---
 title: How I Built This Site
 date: 2023-08-05 11:00:00
-categories: [Random Tech]
+categories: [Web Development]
 tags: [blog, jekyll, cms, web, giscus, github pages]     # TAG names should always be lowercase
 author: chelseyb
 pin: true
