@@ -45,11 +45,6 @@ jobs:
           ruby-version: 3
           bundler-cache: true
 
-      - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-
       - name: Build site
         run: bundle exec jekyll build
         env:
@@ -62,16 +57,16 @@ jobs:
           echo "_site contents:"
           ls -la _site || echo "_site folder missing!"
 
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
       # - name: Test site
       #   run: |
       #     bundle exec htmlproofer _site \
       #       \-\-disable-external=true \
       #       \-\-ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
-
-      - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "_site${{ steps.pages.outputs.base_path }}"
 
   deploy:
     environment:
