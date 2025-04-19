@@ -55,6 +55,13 @@ jobs:
         env:
           JEKYLL_ENV: "production"
 
+      - name: Check if _site exists
+        run: |
+          echo "Workspace contents:"
+          ls -la
+          echo "_site contents:"
+          ls -la _site || echo "_site folder missing!"
+
       # - name: Test site
       #   run: |
       #     bundle exec htmlproofer _site \
